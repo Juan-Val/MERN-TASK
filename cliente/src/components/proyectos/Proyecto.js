@@ -12,7 +12,6 @@ export const Proyecto = ({ proyecto }) => {
 
   // Funcion para agregar el proyecto actual
   const seleccionarProyecto = (id) => {
-    console.log(id);
     proyectoActual(id); //Fijar el proyecto actual
     obternerTares(id); //Filtrar las tareas del proyecto actual
   };
