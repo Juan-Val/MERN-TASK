@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-#claves api
-.env
-
 # production
 /build
 

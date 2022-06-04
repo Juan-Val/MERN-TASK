@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "cliente",
   "version": "0.1.0",
   "private": true,
@@ -13,34 +12,29 @@
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.2",
     "web-vitals": "^2.1.4"
-=======
-  "devDependencies": {
-    "nodemon": "^2.0.16",
-    "uuid": "^8.3.2"
->>>>>>> f54fdf6da642e2d89d28cb5b7dd7056e318c275d
   },
-  "name": "mern-task",
-  "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon ./"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Juan-Val/MERN-TASK.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Juan-Val/MERN-TASK/issues"
-  },
-  "homepage": "https://github.com/Juan-Val/MERN-TASK#readme",
-  "description": "MERN TASK",
-  "dependencies": {
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "mongoose": "^6.3.5"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
