@@ -9,9 +9,6 @@ exports.crearTarea = async (req, res) => {
     return res.status(400).json({ errores: errores.array() });
   }
 
-  // Extraer el proyecto y coprobar si existe
-  const { proyecto } = req.body;
-
   try {
     // Extraer el proyecto y coprobar si existe
     const { proyecto } = req.body;

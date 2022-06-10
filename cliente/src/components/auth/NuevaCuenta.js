@@ -1,11 +1,16 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import alertaContext from "../../context/alertas/alertaContex";
+import authContext from "../../context/autenticacion/authContext";
 
 export const NuevaCuenta = () => {
   // Extrar los valores del context
   const AlertaContext = useContext(alertaContext);
   const { alerta, mostrarAlerta } = AlertaContext;
+
+  // Extrar los valores del context
+  const AuthContext = useContext(authContext);
+  const { mensaje, autenticado, registrarUsuario } = AuthContext;
 
   // State para iniciar sesión
   const [usuario, setUsuario] = useState({
@@ -54,7 +59,20 @@ export const NuevaCuenta = () => {
     }
 
     // pasarlo al action
+    registrarUsuario({ nombre, email, password });
   };
+
+  // En caso de el ususario se haya autentucado
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (autenticado) {
+      // Redireccionar
+      navigate("/proyectos");
+    }
+    if (mensaje) {
+      mostrarAlerta(mensaje.msg, mensaje.categoria);
+    }
+  }, [mensaje, autenticado]);
 
   return (
     <div className="form-usuario">
