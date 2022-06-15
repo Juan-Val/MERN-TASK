@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useEffect } from "react";
+import authContext from "../../context/autenticacion/authContext";
 import { Barra } from "../layout/Barra";
 import { SideBar } from "../layout/SideBar";
 import { FormTarea } from "../tasks/FormTarea";
 import { ListadoTareas } from "../tasks/ListadoTareas";
 
 export const Proyectos = () => {
+  const AuthContext = useContext(authContext);
+  const { usuarioAutenticado } = AuthContext;
+
+  // Revisar si tenemos un token
+  useEffect(() => {
+    usuarioAutenticado();
+  }, []);
+
   return (
     <div className="contenedor-app">
       <SideBar />

@@ -11,7 +11,6 @@ export const ListadoTareas = () => {
   // Obterner las tareas del proyecto actual
   const tareasContext = useContext(TareaContext);
   const { tareasproyecto } = tareasContext;
-
   // Si no hay proyecto seleccionado
   if (!proyecto) return <h2>Selecciona un proyecto</h2>;
 
@@ -19,7 +18,7 @@ export const ListadoTareas = () => {
   const [proyectoActual] = proyecto;
 
   const onClickEliminar = () => {
-    eliminarProyecto(proyectoActual.id);
+    eliminarProyecto(proyectoActual._id);
   };
   return (
     <>
@@ -32,7 +31,7 @@ export const ListadoTareas = () => {
         ) : (
           <TransitionGroup>
             {tareasproyecto.map((tarea) => (
-              <CSSTransition key={tarea.id} timeout={500} classNames="tarea">
+              <CSSTransition key={tarea._id} timeout={500} classNames="tarea">
                 <Tarea tarea={tarea} />
               </CSSTransition>
             ))}
@@ -44,7 +43,7 @@ export const ListadoTareas = () => {
         className="btn btn-eliminar"
         onClick={onClickEliminar}
       >
-        Eliminar proyecyo &times;
+        Eliminar proyecto &times;
       </button>
     </>
   );
